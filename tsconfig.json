@@ -23,5 +23,5 @@
     "declaration": true,
     "target": "esnext"
   },
-  "exclude": ["example"]
+  "exclude": ["example", "lib"]
 }
