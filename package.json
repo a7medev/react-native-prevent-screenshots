@@ -3,16 +3,17 @@
   "title": "React Native Prevent Screenshot",
   "version": "1.0.0",
   "description": "TODO",
-  "main": "index.js",
+  "main": "lib/index.js",
   "files": [
     "README.md",
     "android",
-    "index.js",
+    "lib/*",
     "ios",
     "react-native-prevent-screenshot.podspec"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsc -w",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -32,5 +33,9 @@
   "peerDependencies": {
     "react": ">=16.8.1",
     "react-native": ">=0.60.0-rc.0 <1.0.x"
+  },
+  "devDependencies": {
+    "@types/react-native": "*",
+    "typescript": "^4.4.4"
   }
 }
