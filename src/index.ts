@@ -6,7 +6,28 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo managed workflow\n';
 
-const PreventScreenshot = NativeModules.PreventScreenshot
+interface IPreventScreenshot {
+  /**
+   * Starts preventing screenshots
+   *
+   * @returns A boolean indicating wether screenshots are prevented or not
+   */
+  start: () => Promise<boolean>;
+
+  /**
+   * Stops preventing screenshots
+   *
+   * @returns A boolean indicating wether screenshots are prevented or not
+   */
+  stop: () => Promise<boolean>;
+
+  /**
+   * @returns A boolean indicating wether screenshots are prevented or not
+   */
+  isPrevented: () => Promise<boolean>;
+}
+
+const PreventScreenshot: IPreventScreenshot = NativeModules.PreventScreenshot
   ? NativeModules.PreventScreenshot
   : new Proxy(
       {},
