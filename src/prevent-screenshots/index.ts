@@ -2,7 +2,7 @@ import { NativeModules, Platform } from 'react-native';
 
 const { PreventScreenshot: Native } = NativeModules;
 
-class _PreventScreenshot {
+class _PreventScreenshots {
   private _isPrevented = false;
 
   /**
@@ -45,4 +45,4 @@ class _PreventScreenshot {
   }
 }
 
-export const PreventScreenshot = new _PreventScreenshot();
+export const PreventScreenshots = new _PreventScreenshots();

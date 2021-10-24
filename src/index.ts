@@ -1,2 +1,2 @@
-export { PreventScreenshot } from './prevent-screenshot';
-export { withPreventScreenshot } from './with-prevent-screenshot';
+export { PreventScreenshots } from './prevent-screenshots';
+export { withPreventScreenshots } from './with-prevent-screenshots';

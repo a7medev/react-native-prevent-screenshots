@@ -1,41 +1,41 @@
-# React Native Prevent Screenshot
+# React Native Prevent Screenshots
 
 Prevent Screenshots in your React Native app when needed. 🦄
 
 ## Getting started
 
-`npm install react-native-prevent-screenshot --save`
+`npm install react-native-prevent-screenshots --save`
 
 Or
 
-`yarn add react-native-prevent-screenshot`
+`yarn add react-native-prevent-screenshots`
 
 ### React Native <= 0.59
 
-`react-native link react-native-prevent-screenshot`
+`react-native link react-native-prevent-screenshots`
 
 ## Usage
 
-For iOS support you have to wrap the App component with `withPreventScreenshot`:
+For iOS support you have to wrap the App component with `withPreventScreenshots`:
 
 ```javascript
-import { withPreventScreenshot } from 'react-native-prevent-screenshot';
+import { withPreventScreenshots } from 'react-native-prevent-screenshots';
 
 const App = () => {
   // ...
 };
 
-export default withPreventScreenshot(App);
+export default withPreventScreenshots(App);
 ```
 
-You can now call `PreventScreenshot.start()` and `PreventScreenshot.stop()` functions in your app.
+You can now call `PreventScreenshots.start()` and `PreventScreenshots.stop()` functions in your app.
 
 ```javascript
-import { PreventScreenshots } from 'react-native-prevent-screenshots';
+import { PreventScreenshotss } from 'react-native-prevent-screenshotss';
 
 // Prevent Screenshots (returns `Promise<boolean>` of the prevention state)
-PreventScreenshot.start();
+PreventScreenshots.start();
 
 // Allow Screenshots (returns `Promise<boolean>` of the prevention state)
-PreventScreenshot.stop();
+PreventScreenshots.stop();
 ```

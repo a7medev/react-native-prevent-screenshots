@@ -1,5 +1,5 @@
 {
-  "name": "react-native-prevent-screenshot",
+  "name": "react-native-prevent-screenshots",
   "title": "React Native Prevent Screenshot",
   "version": "1.0.0",
   "description": "Prevent Screenshots in your React Native app when needed. 🦄",
@@ -16,8 +16,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/a7med-mahmoud/react-native-prevent-screenshot.git",
-    "baseUrl": "https://github.com/a7med-mahmoud/react-native-prevent-screenshot"
+    "url": "git+https://github.com/a7med-mahmoud/react-native-prevent-screenshots.git",
+    "baseUrl": "https://github.com/a7med-mahmoud/react-native-prevent-screenshots"
   },
   "keywords": [
     "react-native"

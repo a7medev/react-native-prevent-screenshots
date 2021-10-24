@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { AppState, Animated, StyleSheet, View } from 'react-native';
 
-import { PreventScreenshot } from '../prevent-screenshot';
+import { PreventScreenshots } from '../prevent-screenshots';
 
-export function withPreventScreenshot<P = {}>(App: React.FC<P>): React.FC<P> {
+export function withPreventScreenshots<P = {}>(App: React.FC<P>): React.FC<P> {
   return (props) => {
     const [showOverlay, setShowOverlay] = useState(false);
 
@@ -19,7 +19,7 @@ export function withPreventScreenshot<P = {}>(App: React.FC<P>): React.FC<P> {
 
     useEffect(() => {
       const { remove } = AppState.addEventListener('change', async (state) => {
-        const isPrevented = await PreventScreenshot.isPrevented();
+        const isPrevented = await PreventScreenshots.isPrevented();
         if (isPrevented) {
           return setShowOverlay(state !== 'active');
         }

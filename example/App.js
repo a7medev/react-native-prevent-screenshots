@@ -1,20 +1,20 @@
 import React, {useState} from 'react';
 import {Button, StyleSheet, View, Text} from 'react-native';
 import {
-  PreventScreenshot,
-  withPreventScreenshot,
-} from 'react-native-prevent-screenshot';
+  PreventScreenshots,
+  withPreventScreenshots,
+} from 'react-native-prevent-screenshots';
 
 const App = () => {
   const [isPrevented, setIsPrevented] = useState(false);
 
   const handleStart = async () => {
-    const _isPrevented = await PreventScreenshot.start();
+    const _isPrevented = await PreventScreenshots.start();
     setIsPrevented(_isPrevented);
   };
 
   const handleStop = async () => {
-    const _isPrevented = await PreventScreenshot.stop();
+    const _isPrevented = await PreventScreenshots.stop();
     setIsPrevented(_isPrevented);
   };
 
@@ -48,4 +48,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withPreventScreenshot(App);
+export default withPreventScreenshots(App);
