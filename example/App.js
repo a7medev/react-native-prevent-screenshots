@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import {Button, StyleSheet, View, Text} from 'react-native';
-import PreventScreenshot from 'react-native-prevent-screenshot';
+import {
+  PreventScreenshot,
+  withPreventScreenshot,
+} from 'react-native-prevent-screenshot';
 
 const App = () => {
   const [isPrevented, setIsPrevented] = useState(false);
@@ -45,4 +48,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default withPreventScreenshot(App);
