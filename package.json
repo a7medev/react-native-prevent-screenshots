@@ -2,14 +2,13 @@
   "name": "react-native-prevent-screenshot",
   "title": "React Native Prevent Screenshot",
   "version": "1.0.0",
-  "description": "TODO",
+  "description": "Prevent Screenshots in your React Native app when needed. 🦄",
   "main": "lib/index.js",
   "files": [
     "README.md",
+    "LICENSE",
     "android",
-    "lib/*",
-    "ios",
-    "react-native-prevent-screenshot.podspec"
+    "lib"
   ],
   "scripts": {
     "dev": "tsc -w",
