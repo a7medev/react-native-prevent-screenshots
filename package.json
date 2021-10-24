@@ -1,7 +1,7 @@
 {
   "name": "react-native-prevent-screenshot",
   "title": "React Native Prevent Screenshot",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "Prevent Screenshots in your React Native app when needed. 🦄",
   "main": "lib/index.js",
   "files": [
