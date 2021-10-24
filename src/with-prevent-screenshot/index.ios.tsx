@@ -20,7 +20,6 @@ export function withPreventScreenshot<P = {}>(App: React.FC<P>): React.FC<P> {
     useEffect(() => {
       const { remove } = AppState.addEventListener('change', async (state) => {
         const isPrevented = await PreventScreenshot.isPrevented();
-        console.log(isPrevented);
         if (isPrevented) {
           return setShowOverlay(state !== 'active');
         }
