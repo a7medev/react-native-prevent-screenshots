@@ -31,7 +31,7 @@ export default withPreventScreenshots(App);
 You can now call `PreventScreenshots.start()` and `PreventScreenshots.stop()` functions in your app.
 
 ```javascript
-import { PreventScreenshotss } from 'react-native-prevent-screenshotss';
+import { PreventScreenshots } from 'react-native-prevent-screenshots';
 
 // Prevent Screenshots (returns `Promise<boolean>` of the prevention state)
 PreventScreenshots.start();
