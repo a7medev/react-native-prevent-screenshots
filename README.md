@@ -14,6 +14,18 @@ Or
 
 `react-native link react-native-prevent-screenshots`
 
+### Expo Managed Workflow Support
+
+In order to use `react-native-prevent-screenshots` with Expo you have to have native `android` folder in your app, fortunately you can do that easily without ejecting just by using this command:
+
+```sh
+expo run:android
+```
+
+which will generate the `android` folder for you and allow you to use custom native code for android while still using Expo managed workflow.
+
+> NOTE: you don't have to do the same for iOS because we use the React Native `AppState` JavaScript API on iOS.
+
 ## Usage
 
 For iOS support you have to wrap the App component with `withPreventScreenshots`:
