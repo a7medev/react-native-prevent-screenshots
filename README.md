@@ -2,17 +2,27 @@
 
 Prevent Screenshots in your React Native app when needed. 🦄
 
-## Getting started
+## Installation
 
-`npm install react-native-prevent-screenshots --save`
+First, you need to install the package using the command above:
 
-Or
+```sh
+npm install react-native-prevent-screenshots --save
+```
 
-`yarn add react-native-prevent-screenshots`
+Or if you're using Yarn:
+
+```sh
+yarn add react-native-prevent-screenshots
+```
 
 ### React Native <= 0.59
 
-`react-native link react-native-prevent-screenshots`
+For React Native <= 0.59, there's no autolinking so you have to link the package using the command below:
+
+```sh
+react-native link react-native-prevent-screenshots
+```
 
 ### Expo Managed Workflow Support
 
@@ -28,21 +38,21 @@ which will generate the `android` folder for you and allow you to use custom nat
 
 ## Usage
 
-For iOS support you have to wrap the App component with `withPreventScreenshots`:
+For iOS support you have to wrap the App component with the `withPreventScreenshots` call like this:
 
-```javascript
+```js
 import { withPreventScreenshots } from 'react-native-prevent-screenshots';
 
-const App = () => {
+function App() {
   // ...
-};
+}
 
 export default withPreventScreenshots(App);
 ```
 
-You can now call `PreventScreenshots.start()` and `PreventScreenshots.stop()` functions in your app.
+Now, you can now call `PreventScreenshots.start()` and `PreventScreenshots.stop()` functions anywhere in your app to start/stop preventing screenshots.
 
-```javascript
+```js
 import { PreventScreenshots } from 'react-native-prevent-screenshots';
 
 // Prevent Screenshots (returns `Promise<boolean>` of the prevention state)
