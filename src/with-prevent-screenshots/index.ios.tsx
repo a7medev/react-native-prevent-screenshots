@@ -1,5 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { AppState, Animated, StyleSheet, View } from 'react-native';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import {
+  AppState,
+  Animated,
+  StyleSheet,
+  View,
+  AppStateStatus,
+} from 'react-native';
 
 import { PreventScreenshots } from '../prevent-screenshots';
 
@@ -17,19 +23,30 @@ export function withPreventScreenshots<P = {}>(App: React.FC<P>): React.FC<P> {
       }).start();
     }, [showOverlay, opacity]);
 
+    const handleStateChange = useCallback(async (status: AppStateStatus) => {
+      const isPrevented = await PreventScreenshots.isPrevented();
+      if (isPrevented) {
+        return setShowOverlay(status !== 'active');
+      }
+
+      if (!showOverlay) {
+        setShowOverlay(false);
+      }
+    }, []);
+
     useEffect(() => {
-      const { remove } = AppState.addEventListener('change', async (state) => {
-        const isPrevented = await PreventScreenshots.isPrevented();
-        if (isPrevented) {
-          return setShowOverlay(state !== 'active');
-        }
+      const subscription = AppState.addEventListener(
+        'change',
+        handleStateChange
+      );
 
-        if (!showOverlay) {
-          setShowOverlay(false);
+      return () => {
+        if (typeof subscription?.remove === 'function') {
+          subscription.remove();
+        } else {
+          AppState.removeEventListener('change', handleStateChange);
         }
-      });
-
-      return () => remove();
+      };
     }, []);
 
     return (
