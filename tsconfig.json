@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
-    "outDir": "lib",
+    "baseUrl": "./",
+    "paths": {
+      "react-native-prevent-screenshots": ["./src/index"]
+    },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
@@ -15,13 +17,12 @@
     "noImplicitReturns": true,
     "noImplicitUseStrict": false,
     "noStrictGenericChecks": false,
+    "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "declaration": true,
     "target": "esnext"
-  },
-  "exclude": ["example", "lib"]
+  }
 }

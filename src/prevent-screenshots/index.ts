@@ -1,6 +1,14 @@
 import { NativeModules, Platform } from 'react-native';
 
-const { PreventScreenshot: Native } = NativeModules;
+// @ts-expect-error
+const isTurboModuleEnabled = global.__turboModuleProxy != null;
+
+const NativePreventScreenshots =
+  Platform.OS === 'android'
+    ? isTurboModuleEnabled
+      ? require('../NativePreventScreenshots').default
+      : NativeModules.PreventScreenshots
+    : null;
 
 class _PreventScreenshots {
   private _isPrevented = false;
@@ -16,7 +24,7 @@ class _PreventScreenshots {
       return Promise.resolve(true);
     }
 
-    return Native.start();
+    return NativePreventScreenshots.start();
   }
 
   /**
@@ -30,7 +38,7 @@ class _PreventScreenshots {
       return Promise.resolve(false);
     }
 
-    return Native.stop();
+    return NativePreventScreenshots.stop();
   }
 
   /**
@@ -41,7 +49,7 @@ class _PreventScreenshots {
       return Promise.resolve(this._isPrevented);
     }
 
-    return Native.isPrevented();
+    return NativePreventScreenshots.isPrevented();
   }
 }
 
